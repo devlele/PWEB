@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cards de Dinossauros</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <main>
+        <h1>Dinossauros Famosos</h1>
+        <section class="cards-container" aria-label="Lista de dinossauros">
+            <article class="card" tabindex="0" role="button" aria-pressed="false">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images/rex.jpg" alt="Tiranossauro Rex" />
+                        <h2>Tiranossauro Rex</h2>
+                    </div>
+                    <div class="card-back">
+                        <h3>Ficha Técnica</h3>
+                        <ul>
+                            <li><strong>Período:</strong> Cretáceo Superior</li>
+                            <li><strong>Comprimento:</strong> até 12 metros</li>
+                            <li><strong>Peso:</strong> até 9 toneladas</li>
+                            <li><strong>Dieta:</strong> Carnívoro</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" tabindex="0" role="button" aria-pressed="false">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images/triceratops.jpg" alt="Tricerátopo" />
+                        <h2>Tricerátopo</h2>
+                    </div>
+                    <div class="card-back">
+                        <h3>Ficha Técnica</h3>
+                        <ul>
+                            <li><strong>Período:</strong> Cretáceo Superior</li>
+                            <li><strong>Comprimento:</strong> até 9 metros</li>
+                            <li><strong>Peso:</strong> até 12 toneladas</li>
+                            <li><strong>Dieta:</strong> Herbívoro</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" tabindex="0" role="button" aria-pressed="false">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images/espinossauro.jpg" alt="Espinossauro" />
+                        <h2>Espinossauro</h2>
+                    </div>
+                    <div class="card-back">
+                        <h3>Ficha Técnica</h3>
+                        <ul>
+                            <li><strong>Período:</strong> Cretáceo Inferior</li>
+                            <li><strong>Comprimento:</strong> até 15 metros</li>
+                            <li><strong>Peso:</strong> até 7 toneladas</li>
+                            <li><strong>Dieta:</strong> Carnívoro</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card" tabindex="0" role="button" aria-pressed="false">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images/parasauro.jpg" alt="Parasaurolophos" />
+                        <h2>Parasaurolophos</h2>
+                    </div>
+                    <div class="card-back">
+                        <h3>Ficha Técnica</h3>
+                        <ul>
+                            <li><strong>Período:</strong> Cretáceo Superior</li>
+                            <li><strong>Comprimento:</strong> até 10 metros</li>
+                            <li><strong>Peso:</strong> até 2,5 toneladas</li>
+                            <li><strong>Dieta:</strong> Herbívoro</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        // Script para inverter os cards ao clicar ou usar teclado (enter/space)
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                const pressed = card.getAttribute('aria-pressed') === 'true';
+                card.setAttribute('aria-pressed', String(!pressed));
+                card.querySelector('.card-inner').classList.toggle('is-flipped');
+            });
+
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
