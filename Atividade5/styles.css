@@ -1,0 +1,71 @@
+.caixa {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  background-color: gray;
+}
+
+.caixa h2::after {
+  content: "Cinza";
+}
+
+@media (min-width: 421px) and (max-width: 768px) {
+  .caixa {
+    background-color: orange;
+  }
+  .caixa h2::after {
+    content: "Laranja";
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .caixa {
+    background-color: pink;
+    color: black;
+  }
+  .caixa h2::after {
+    content: "Rosa";
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1080px) {
+  .caixa {
+    background-color: purple;
+  }
+  .caixa h2::after {
+    content: "Roxo";
+  }
+}
+
+@media (min-width: 1081px) and (max-width: 1366px) {
+  .caixa {
+    background-color: royalblue;
+  }
+  .caixa h2::after {
+    content: "Azul";
+  }
+}
+
+@media (min-width: 1367px) and (max-width: 1920px) {
+  .caixa {
+    background-color: yellow;
+    color: black;
+  }
+  .caixa h2::after {
+    content: "Amarelo";
+  }
+}
+
+@media (min-width: 1921px) {
+  .caixa {
+    background-color: green;
+  }
+  .caixa h2::after {
+    content: "Verde";
+  }
+}
