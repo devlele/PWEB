@@ -1,0 +1,115 @@
+<script>
+    var aluno1 = new Object();
+aluno1.ra = "00001234";
+aluno1.nome = "Felipe";
+alert(`ra=${aluno1.ra} nome=${aluno1.nome}`);
+
+var aluno2 = {};
+aluno2.ra = "1234";
+aluno2["nome"] = "Rafaela";
+alert("ra=" + aluno2.ra + "nome" + aluno2.nome);
+aluno2["email do aluno"] = "fara@hotmail.com";
+alert(aluno2["email do aluno"]);
+
+var aluno3 = {
+    ra: "123456",
+    nome: "Marcos",
+}
+alert("ra=" + aluno3.ra + " nome " + aluno3.nome);
+
+function Aluno(ra, nome){
+    this.ra = ra;
+    this.nome = nome;
+    this.MostrarDados = function(){
+        return "ra= " + this.ra + " nome " + this.nome;
+    }
+}
+
+var aluno4 = new Aluno("12345678", "Vinicius");
+alert(aluno4.MostrarDados());
+alert(aluno4.nome);
+
+
+function Aluno2(){
+    var ra;
+    var nome;
+    this.setRa = function(value){
+        this.ra = value;
+    }
+    this.getRa = function(){
+        return this.ra;
+    }
+    this.setNome = function(value){
+        this.nome = value;
+    }
+    this.getNome = function(){
+        return this.nome;
+    }
+
+    var aluno6 
+
+    function AlunoAds() {
+        var numLab;
+        this.setNumLab = function(value){
+            this.numLab = value;
+        }
+        this.getNumLab = function(){
+            return this.numLab;
+        }
+    }
+
+    AlunoAds.prototype = new Aluno2();
+    var aluno7 = new AlunoAds();
+    aluno7.setRa("123");
+    aluno7.setNome("Evandro");
+    aluno7.setNumLab(5);
+    alert(aluno7.getNome() + " " + aluno7.getNumLab() + " " + aluno7.getRa())
+}
+
+//usando classe
+class Aluno1{
+    constructor(){
+        this._ra;
+        this._nome;
+    }
+    setNome(value){
+        this._nome = value;
+    }
+    getNome() {
+        return this._nome;
+    }
+    setRa(value){
+        this._ra = value;
+    }
+    getRa(){
+        return this._ra; 
+    }
+}
+
+var objAluno = new Aluno1();
+objAluno.setNome("Renan");
+objAluno.setRa('123');
+alert(`nome=${objAluno.getNome()}
+ra=${objAluno.getRa()}`);
+
+class AlunoAds1 extends Aluno1{
+    constructor(){
+        super();
+        this._numLab;
+    }
+    setNumLab(value){
+        this._numLab = value;
+    }
+    getNumLab(){
+        return this._numLab;
+    }
+}
+
+var objAlunosADS = new AlunosAds1();
+objAlunosADS.setNome("andreas");
+objAlunosADS.setRa("123");
+objAlunosADS.setNumLab(6);
+alert(`nome=${objAlunosADS.getNome()}
+ra=${objAlunosADS.getRa()}
+NumLab=${objAlunosADS.getNumLab()}`);
+</script>
